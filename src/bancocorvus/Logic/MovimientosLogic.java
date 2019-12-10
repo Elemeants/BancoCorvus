@@ -9,10 +9,7 @@ import bancocorvus.Database.UsuariosSql;
 import bancocorvus.Models.CuentaBancaria;
 import bancocorvus.Models.Usuario;
 
-/**
- *
- * @author Jdany
- */
+ 
 public class MovimientosLogic {
     private UsuarioLogic userLogic;
 

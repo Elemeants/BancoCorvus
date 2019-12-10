@@ -5,10 +5,7 @@
  */
 package bancocorvus.Models;
 
-/**
- *
- * @author Jdany
- */
+ 
 public class UtilsModels {
     static String ParseString(String str) { return str == null ? "": str; } 
 }

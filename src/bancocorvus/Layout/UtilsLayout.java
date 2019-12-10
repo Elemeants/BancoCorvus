@@ -12,10 +12,6 @@ import static javax.swing.JOptionPane.INFORMATION_MESSAGE;
 import javax.swing.JSpinner;
 import javax.swing.JTextField;
 
-/**
- *
- * @author Jdany
- */
 public class UtilsLayout {
     public static Object LeerInputSpinner(JSpinner spinner) {
         Object value = spinner.getValue();

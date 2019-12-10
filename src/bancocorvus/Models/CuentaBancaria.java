@@ -7,10 +7,7 @@ package bancocorvus.Models;
 
 import static bancocorvus.Models.UtilsModels.ParseString;
 
-/**
- *
- * @author Jdany
- */
+ 
 public class CuentaBancaria extends Usuario {
     public String Calle;
     public String Colonia;

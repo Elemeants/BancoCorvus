@@ -12,11 +12,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-/**
- *
- * @author Jdany
- * @param <T> Model of object
- */
 public abstract class SQLBase<T> {
     private static String dbUrl = "jdbc:mysql://localhost:3306/bancocorvus";
     private static String dbUsr = "root";

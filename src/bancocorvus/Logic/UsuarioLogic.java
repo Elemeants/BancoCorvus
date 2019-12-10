@@ -11,10 +11,7 @@ import bancocorvus.Models.Usuario;
 import java.util.ArrayList;
 import bancocorvus.Models.OnUsuariosChange;
 
-/**
- *
- * @author Jdany
- */
+ 
 public class UsuarioLogic {
     private UsuariosSql dbContext;
     private static ArrayList<OnUsuariosChange> liseners = new ArrayList<>();

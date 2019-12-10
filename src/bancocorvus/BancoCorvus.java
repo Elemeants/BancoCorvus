@@ -11,10 +11,7 @@ import bancocorvus.Layout.LoginLayout;
 import bancocorvus.Models.CuentaBancaria;
 import bancocorvus.Models.Usuario;
 
-/**
- *
- * @author Jdany
- */
+ 
 public class BancoCorvus {
 
     /**

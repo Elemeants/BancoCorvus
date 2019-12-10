@@ -8,10 +8,6 @@ package bancocorvus.Logic;
 import bancocorvus.Database.UsuariosSql;
 import bancocorvus.Models.LoginModel;
 
-/**
- *
- * @author Jdany
- */
 public class LoginLogic {
     private UsuariosSql dbContext;
 

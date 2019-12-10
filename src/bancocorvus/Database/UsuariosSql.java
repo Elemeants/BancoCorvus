@@ -12,10 +12,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import bancocorvus.Models.LoginModel;
 
-/**
- *
- * @author Jdany
- */
+ 
 public class UsuariosSql extends SQLBase<CuentaBancaria> {
 
     public UsuariosSql() {

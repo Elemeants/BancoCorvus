@@ -5,10 +5,7 @@
  */
 package bancocorvus.Models;
 
-/**
- *
- * @author Jdany
- */
+ 
 public class LoginModel {
     public String Usuario; 
     public String Contraseña;

@@ -5,10 +5,7 @@
  */
 package bancocorvus.Models;
 
-/**
- *
- * @author Jdany
- */
+ 
 public interface OnUsuariosChange {
     public void OnUsuariosChange(); 
 }

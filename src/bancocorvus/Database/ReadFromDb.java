@@ -7,10 +7,7 @@ package bancocorvus.Database;
 
 import java.sql.ResultSet;
 
-/**
- *
- * @author Jdany
- */
+ 
 public interface ReadFromDb<T> {
     public T ReadFromDb(ResultSet set); 
 }
