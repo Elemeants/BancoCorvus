@@ -47,6 +47,7 @@ public class LoginLayout extends JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel1.setText("Login");
         jLabel13.setText("Usuario");
+        jLabel14.setText("Contraseña");
         ButtonLogic.setText("Login");
 
         ButtonLogic.addActionListener(new java.awt.event.ActionListener() {
