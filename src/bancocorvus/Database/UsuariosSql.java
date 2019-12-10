@@ -47,6 +47,7 @@ public class UsuariosSql extends SQLBase<CuentaBancaria> {
 
     public boolean Login(LoginModel model) {
         String loginQuery = "SELECT * FROM usuarios WHERE Usuario = \"" + model.getUsuario() + "\" AND Password = \"" + model.getContraseña() + "\"";
+        System.out.println(loginQuery);
         int cuenta = this.ExecuteQuery(loginQuery, (ResultSet set) -> this.ReadFromDb(set)).size();
         return cuenta > 0;
     }
