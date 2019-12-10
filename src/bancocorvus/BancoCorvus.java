@@ -7,6 +7,7 @@ package bancocorvus;
 
 import bancocorvus.Database.UsuariosSql;
 import bancocorvus.Layout.BancoLayout;
+import bancocorvus.Layout.LoginLayout;
 import bancocorvus.Models.CuentaBancaria;
 import bancocorvus.Models.Usuario;
 
@@ -46,7 +47,7 @@ public class BancoCorvus {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new BancoLayout().setVisible(true);
+            new LoginLayout().setVisible(true);
         });
     }
     

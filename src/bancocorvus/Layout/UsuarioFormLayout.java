@@ -13,12 +13,26 @@ import bancocorvus.Models.Usuario;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
+import javax.swing.JTabbedPane;
+import javax.swing.JPanel;
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JPasswordField;
+import javax.swing.JSpinner;
+import javax.swing.JTextField;
+import javax.swing.JLabel;
+import javax.swing.JSeparator;
+import javax.swing.JRadioButton;
+import javax.swing.JComboBox;
+import javax.swing.ButtonGroup;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 
 /**
  *
  * @author Jdany
  */
-public class UsuarioFormLayout extends javax.swing.JPanel {
+public class UsuarioFormLayout extends JPanel {
     private final UsuarioLogic userLogic;
     private int userIdSearch;
     /** Creates new form UsuarioFormLayout */
@@ -42,11 +56,11 @@ public class UsuarioFormLayout extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        ScrollTable = new javax.swing.JScrollPane();
-        TablaUsuarios = new javax.swing.JTable();
-        LabelModuloUsuarios = new javax.swing.JLabel();
-        BotonBuscarId = new javax.swing.JButton();
-        InputUsuarioId = new javax.swing.JSpinner();
+        ScrollTable = new JScrollPane();
+        TablaUsuarios = new JTable();
+        LabelModuloUsuarios = new JLabel();
+        BotonBuscarId = new JButton();
+        InputUsuarioId = new JSpinner();
 
         setPreferredSize(new java.awt.Dimension(500, 500));
 
@@ -55,16 +69,16 @@ public class UsuarioFormLayout extends javax.swing.JPanel {
         ScrollTable.setViewportView(TablaUsuarios);
 
         LabelModuloUsuarios.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        InputUsuarioId.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
         LabelModuloUsuarios.setText("Lista de usuarios");
-
         BotonBuscarId.setText("Buscar por Id");
+
         BotonBuscarId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonBuscarIdActionPerformed(evt);
             }
         });
 
-        InputUsuarioId.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -142,11 +156,11 @@ public class UsuarioFormLayout extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BotonBuscarId;
-    private javax.swing.JSpinner InputUsuarioId;
-    private javax.swing.JLabel LabelModuloUsuarios;
-    private javax.swing.JScrollPane ScrollTable;
-    private javax.swing.JTable TablaUsuarios;
+    private JButton BotonBuscarId;
+    private JSpinner InputUsuarioId;
+    private JLabel LabelModuloUsuarios;
+    private JScrollPane ScrollTable;
+    private JTable TablaUsuarios;
     // End of variables declaration//GEN-END:variables
 
 }

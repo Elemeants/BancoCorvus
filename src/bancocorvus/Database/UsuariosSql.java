@@ -10,6 +10,7 @@ import bancocorvus.Models.Usuario;
 import java.util.ArrayList;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import bancocorvus.Models.LoginModel;
 
 /**
  *
@@ -39,10 +40,18 @@ public class UsuariosSql extends SQLBase<CuentaBancaria> {
             model.setPrestamos( result.getBoolean("Prestamos") );
             model.setTarjetaDebito( result.getBoolean("TarjetaD") );
             model.setTarjetaCredito( result.getBoolean("TarjetaC") );
+            model.setUsuario( result.getString("Usuario") );
+            model.setContraseña( result.getString("Password") );
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return model;
+    }
+
+    public boolean Login(LoginModel model) {
+        String loginQuery = "SELECT * FROM usuarios WHERE Usuario = \"" + model.getUsuario() + "\" AND Password = \"" + model.getContraseña() + "\"";
+        int cuenta = this.ExecuteQuery(loginQuery, (ResultSet set) -> this.ReadFromDb(set)).size();
+        return cuenta > 0;
     }
 
     @Override
@@ -64,6 +73,8 @@ public class UsuariosSql extends SQLBase<CuentaBancaria> {
         fields.add("Prestamos"); keys.add("" + model.getPrestamos());
         fields.add("TarjetaD"); keys.add("" + model.getTarjetaDebito());
         fields.add("TarjetaC"); keys.add("" + model.getTarjetaCredito());
+        fields.add("Usuario"); keys.add("\"" + model.getUsuario()+ "\"");
+        fields.add("Password"); keys.add("\"" + model.getContraseña()+ "\"");
         String query = this.getInsertQuery(fields, keys);
         System.out.println(query);
         this.ExecuteUpdate(query);

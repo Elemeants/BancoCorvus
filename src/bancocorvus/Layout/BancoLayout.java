@@ -5,12 +5,15 @@
  */
 package bancocorvus.Layout;
 
+import javax.swing.JTabbedPane;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Jdany
  */
-public class BancoLayout extends javax.swing.JFrame {
-
+public class BancoLayout extends JFrame {
     /**
      * Creates new form BancoLayout
      */
@@ -26,17 +29,16 @@ public class BancoLayout extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-
-        MainTabMenu = new javax.swing.JTabbedPane();
-        UsuariosTab = new bancocorvus.Layout.UsuarioFormLayout();
-        agregarUsuarioLayout1 = new bancocorvus.Layout.AgregarUsuarioLayout();
-        transferenciasLayout1 = new bancocorvus.Layout.TransferenciasLayout();
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
         setTitle("Banco Corvus");
         setResizable(false);
         setSize(new java.awt.Dimension(600, 400));
 
+        UsuariosTab = new UsuarioFormLayout();
+        agregarUsuarioLayout1 = new AgregarUsuarioLayout();
+        transferenciasLayout1 = new TransferenciasLayout();
+
+        MainTabMenu = new JTabbedPane();
         MainTabMenu.setPreferredSize(new java.awt.Dimension(529, 367));
         MainTabMenu.addTab("Lista de Usuarios", UsuariosTab);
         MainTabMenu.addTab("Agregar usuario", agregarUsuarioLayout1);
@@ -52,15 +54,14 @@ public class BancoLayout extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(MainTabMenu, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 347, Short.MAX_VALUE)
         );
-
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTabbedPane MainTabMenu;
-    private bancocorvus.Layout.UsuarioFormLayout UsuariosTab;
-    private bancocorvus.Layout.AgregarUsuarioLayout agregarUsuarioLayout1;
-    private bancocorvus.Layout.TransferenciasLayout transferenciasLayout1;
+    private JTabbedPane MainTabMenu;
+    private UsuarioFormLayout UsuariosTab;
+    private AgregarUsuarioLayout agregarUsuarioLayout1;
+    private TransferenciasLayout transferenciasLayout1;
     // End of variables declaration//GEN-END:variables
 }

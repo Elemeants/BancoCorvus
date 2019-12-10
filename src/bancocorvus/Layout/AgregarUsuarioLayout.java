@@ -12,12 +12,21 @@ import static bancocorvus.Layout.UtilsLayout.PopupError;
 import static bancocorvus.Layout.UtilsLayout.PopupInfo;
 import bancocorvus.Logic.UsuarioLogic;
 import bancocorvus.Models.CuentaBancaria;
+import javax.swing.JTabbedPane;
+import javax.swing.JPanel;
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JPasswordField;
+import javax.swing.JSpinner;
+import javax.swing.JTextField;
+import javax.swing.JLabel;
+import javax.swing.JSeparator;
 
 /**
  *
  * @author Jdany
  */
-public class AgregarUsuarioLayout extends javax.swing.JPanel {
+public class AgregarUsuarioLayout extends JPanel {
     private UsuarioLogic userLogic;
     /**
      * Creates new form AgregarUsuarioLayout
@@ -103,6 +112,29 @@ public class AgregarUsuarioLayout extends javax.swing.JPanel {
 
         jLabel12.setText("Telefono");
 
+        CheckboxPrestamos.setText("Tiene prestamos");
+
+        CheckboxTarjetaCredito.setText("Tiene tarjeta de credito");
+
+        CheckboxTarjetaDebito.setText("Tiene tarjeta de debito");
+
+        jLabel13.setText("Usuario");
+
+        jLabel14.setText("Contraseña");
+
+        ButtonGuardar.setText("Guardar");
+        
+
+        jLabel15.setText("Saldo");
+        
+        InputSaldo.setModel(new javax.swing.SpinnerNumberModel(0.0f, 0.0f, null, 1.0f));
+
+        ButtonGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonGuardarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -165,28 +197,6 @@ public class AgregarUsuarioLayout extends javax.swing.JPanel {
                             .addComponent(InputTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel12)))))
         );
-
-        CheckboxPrestamos.setText("Tiene prestamos");
-
-        CheckboxTarjetaCredito.setText("Tiene tarjeta de credito");
-
-        CheckboxTarjetaDebito.setText("Tiene tarjeta de debito");
-
-        jLabel13.setText("Usuario");
-
-        jLabel14.setText("Contraseña");
-
-        ButtonGuardar.setText("Guardar");
-        ButtonGuardar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ButtonGuardarActionPerformed(evt);
-            }
-        });
-
-        jLabel15.setText("Saldo");
-
-        InputSaldo.setModel(new javax.swing.SpinnerNumberModel(0.0f, 0.0f, null, 1.0f));
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -317,6 +327,9 @@ public class AgregarUsuarioLayout extends javax.swing.JPanel {
         cuenta.setNumeroCuenta((int)LeerInputSpinner(this.InputNoCuenta));
         cuenta.setSaldo((float)LeerInputSpinner(this.InputSaldo));
         
+        cuenta.setUsuario(LeerInputText(this.InputUsuario));
+        cuenta.setContraseña(LeerInputText(this.InputContraseña));
+        
         cuenta.setNombre(LeerInputText(this.InputNombre));
         cuenta.setApellidoPaterno(LeerInputText(this.InputApellidoP));
         cuenta.setApellidoMaterno(LeerInputText(this.InputApellidoM));
@@ -333,42 +346,42 @@ public class AgregarUsuarioLayout extends javax.swing.JPanel {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton ButtonGuardar;
-    private javax.swing.JCheckBox CheckboxPrestamos;
-    private javax.swing.JCheckBox CheckboxTarjetaCredito;
-    private javax.swing.JCheckBox CheckboxTarjetaDebito;
-    private javax.swing.JTextField InputApellidoM;
-    private javax.swing.JTextField InputApellidoP;
-    private javax.swing.JTextField InputCP;
-    private javax.swing.JTextField InputCalle;
-    private javax.swing.JTextField InputColonia;
-    private javax.swing.JPasswordField InputContraseña;
-    private javax.swing.JSpinner InputId;
-    private javax.swing.JTextField InputMunicipio;
-    private javax.swing.JSpinner InputNoCuenta;
-    private javax.swing.JTextField InputNombre;
-    private javax.swing.JTextField InputPais;
-    private javax.swing.JSpinner InputSaldo;
-    private javax.swing.JTextField InputTelefono;
-    private javax.swing.JTextField InputUsuario;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JSeparator jSeparator3;
+    private JButton ButtonGuardar;
+    private JCheckBox CheckboxPrestamos;
+    private JCheckBox CheckboxTarjetaCredito;
+    private JCheckBox CheckboxTarjetaDebito;
+    private JTextField InputApellidoM;
+    private JTextField InputApellidoP;
+    private JTextField InputCP;
+    private JTextField InputCalle;
+    private JTextField InputColonia;
+    private JPasswordField InputContraseña;
+    private JSpinner InputId;
+    private JTextField InputMunicipio;
+    private JSpinner InputNoCuenta;
+    private JTextField InputNombre;
+    private JTextField InputPais;
+    private JSpinner InputSaldo;
+    private JTextField InputTelefono;
+    private JTextField InputUsuario;
+    private JLabel jLabel1;
+    private JLabel jLabel10;
+    private JLabel jLabel11;
+    private JLabel jLabel12;
+    private JLabel jLabel13;
+    private JLabel jLabel14;
+    private JLabel jLabel15;
+    private JLabel jLabel2;
+    private JLabel jLabel3;
+    private JLabel jLabel4;
+    private JLabel jLabel5;
+    private JLabel jLabel6;
+    private JLabel jLabel7;
+    private JLabel jLabel8;
+    private JLabel jLabel9;
+    private JPanel jPanel1;
+    private JSeparator jSeparator1;
+    private JSeparator jSeparator2;
+    private JSeparator jSeparator3;
     // End of variables declaration//GEN-END:variables
 }

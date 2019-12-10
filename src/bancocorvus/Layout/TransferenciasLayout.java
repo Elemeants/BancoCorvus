@@ -16,12 +16,24 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.ERROR_MESSAGE;
 import static javax.swing.JOptionPane.INFORMATION_MESSAGE;
+import javax.swing.JTabbedPane;
+import javax.swing.JPanel;
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JPasswordField;
+import javax.swing.JSpinner;
+import javax.swing.JTextField;
+import javax.swing.JLabel;
+import javax.swing.JSeparator;
+import javax.swing.JRadioButton;
+import javax.swing.JComboBox;
+import javax.swing.ButtonGroup;
 
 /**
  *
  * @author Jdany
  */
-public class TransferenciasLayout extends javax.swing.JPanel {
+public class TransferenciasLayout extends JPanel {
     private MovimientosLogic movLogic;
     private UsuarioLogic userLogic;
     ArrayList<Usuario> usuarios;
@@ -60,28 +72,29 @@ public class TransferenciasLayout extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        TipoMovimientoButtonGroup = new javax.swing.ButtonGroup();
-        jSeparator1 = new javax.swing.JSeparator();
-        jLabel1 = new javax.swing.JLabel();
-        jTabbedPane1 = new javax.swing.JTabbedPane();
-        MovimientosPanel = new javax.swing.JPanel();
-        ComboBoxUsuarios = new javax.swing.JComboBox<>();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        InputMovimiento = new javax.swing.JSpinner();
-        ButtonDeposito = new javax.swing.JRadioButton();
-        ButtonRetiro = new javax.swing.JRadioButton();
-        ButtonSave = new javax.swing.JButton();
-        TransferenciaPanel = new javax.swing.JPanel();
-        ComboBoxUsuarioOrigen = new javax.swing.JComboBox<>();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        InputTransferencia = new javax.swing.JSpinner();
-        ButtonTransferencia = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
-        ComboBoxUsuarioDestino = new javax.swing.JComboBox<>();
+        TipoMovimientoButtonGroup = new ButtonGroup();
+        jSeparator1 = new JSeparator();
+        jLabel1 = new JLabel();
+        jTabbedPane1 = new JTabbedPane();
+        MovimientosPanel = new JPanel();
+        ComboBoxUsuarios = new JComboBox<>();
+        jLabel2 = new JLabel();
+        jLabel3 = new JLabel();
+        InputMovimiento = new JSpinner();
+        ButtonDeposito = new JRadioButton();
+        ButtonRetiro = new JRadioButton();
+        ButtonSave = new JButton();
+        TransferenciaPanel = new JPanel();
+        ComboBoxUsuarioOrigen = new JComboBox<>();
+        jLabel4 = new JLabel();
+        jLabel5 = new JLabel();
+        InputTransferencia = new JSpinner();
+        ButtonTransferencia = new JButton();
+        jLabel6 = new JLabel();
+        ComboBoxUsuarioDestino = new JComboBox<>();
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+
         jLabel1.setText("Transferencias");
 
         jLabel2.setText("Usuario");
@@ -91,23 +104,47 @@ public class TransferenciasLayout extends javax.swing.JPanel {
         InputMovimiento.setModel(new javax.swing.SpinnerNumberModel(0.0f, 0.0f, null, 1.0f));
 
         ButtonDeposito.setText("Deposito");
+
+        ButtonRetiro.setText("Retiro");
+
+        ButtonSave.setText("Ejecutar movimiento");
+
+        jTabbedPane1.addTab("Movimientos de usuario", MovimientosPanel);
+
+        jLabel4.setText("Usuario Origen");
+
+        jLabel5.setText("Movimiento");
+
+        InputTransferencia.setModel(new javax.swing.SpinnerNumberModel(0.0f, 0.0f, null, 1.0f));
+
+        ButtonTransferencia.setText("Transferencia");
+        
+
+        jLabel6.setText("Usuario Destino");
+        
+        jTabbedPane1.addTab("Transferencia", TransferenciaPanel);
+
         ButtonDeposito.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonDepositoActionPerformed(evt);
             }
         });
 
-        ButtonRetiro.setText("Retiro");
         ButtonRetiro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonRetiroActionPerformed(evt);
             }
         });
 
-        ButtonSave.setText("Ejecutar movimiento");
         ButtonSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonSaveActionPerformed(evt);
+            }
+        });
+
+        ButtonTransferencia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonTransferenciaActionPerformed(evt);
             }
         });
 
@@ -156,24 +193,6 @@ public class TransferenciasLayout extends javax.swing.JPanel {
                 .addComponent(ButtonSave)
                 .addContainerGap(150, Short.MAX_VALUE))
         );
-
-        jTabbedPane1.addTab("Movimientos de usuario", MovimientosPanel);
-
-        jLabel4.setText("Usuario Origen");
-
-        jLabel5.setText("Movimiento");
-
-        InputTransferencia.setModel(new javax.swing.SpinnerNumberModel(0.0f, 0.0f, null, 1.0f));
-
-        ButtonTransferencia.setText("Transferencia");
-        ButtonTransferencia.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ButtonTransferenciaActionPerformed(evt);
-            }
-        });
-
-        jLabel6.setText("Usuario Destino");
-
         javax.swing.GroupLayout TransferenciaPanelLayout = new javax.swing.GroupLayout(TransferenciaPanel);
         TransferenciaPanel.setLayout(TransferenciaPanelLayout);
         TransferenciaPanelLayout.setHorizontalGroup(
@@ -220,9 +239,6 @@ public class TransferenciasLayout extends javax.swing.JPanel {
                 .addComponent(ButtonTransferencia)
                 .addContainerGap(145, Short.MAX_VALUE))
         );
-
-        jTabbedPane1.addTab("Transferencia", TransferenciaPanel);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -291,25 +307,25 @@ public class TransferenciasLayout extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JRadioButton ButtonDeposito;
-    private javax.swing.JRadioButton ButtonRetiro;
-    private javax.swing.JButton ButtonSave;
-    private javax.swing.JButton ButtonTransferencia;
-    private javax.swing.JComboBox<String> ComboBoxUsuarioDestino;
-    private javax.swing.JComboBox<String> ComboBoxUsuarioOrigen;
-    private javax.swing.JComboBox<String> ComboBoxUsuarios;
-    private javax.swing.JSpinner InputMovimiento;
-    private javax.swing.JSpinner InputTransferencia;
-    private javax.swing.JPanel MovimientosPanel;
-    private javax.swing.ButtonGroup TipoMovimientoButtonGroup;
-    private javax.swing.JPanel TransferenciaPanel;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTabbedPane jTabbedPane1;
+    private JRadioButton ButtonDeposito;
+    private JRadioButton ButtonRetiro;
+    private JButton ButtonSave;
+    private JButton ButtonTransferencia;
+    private JComboBox<String> ComboBoxUsuarioDestino;
+    private JComboBox<String> ComboBoxUsuarioOrigen;
+    private JComboBox<String> ComboBoxUsuarios;
+    private JSpinner InputMovimiento;
+    private JSpinner InputTransferencia;
+    private JPanel MovimientosPanel;
+    private ButtonGroup TipoMovimientoButtonGroup;
+    private JPanel TransferenciaPanel;
+    private JLabel jLabel1;
+    private JLabel jLabel2;
+    private JLabel jLabel3;
+    private JLabel jLabel4;
+    private JLabel jLabel5;
+    private JLabel jLabel6;
+    private JSeparator jSeparator1;
+    private JTabbedPane jTabbedPane1;
     // End of variables declaration//GEN-END:variables
 }
